@@ -1,0 +1,33 @@
+def calc_grade(marks):
+    if marks >= 90:
+        return "A+"
+    elif 80 <= marks < 90:
+        return "A"
+    elif 70 <= marks < 80:
+        return "B"
+    elif 60 <= marks < 70:
+        return "C"
+    elif 50 <= marks < 60:
+        return "D"
+    else:
+        return "Fail"
+
+def inputuser():
+    while True:
+        try:
+            marks = int(input("Enter the marks obtained by the student: "))
+            if 0 <= marks <= 100:
+                return marks
+            else:
+                print("Invalid input. Marks should be between 0 and 100.")
+        except ValueError:
+            print("Invalid input. Please enter a valid integer value for marks.")
+
+def main():
+    while True:
+        marks = inputuser()
+        grade = calc_grade(marks)
+        print(f"Grade: {grade}")
+
+if _name_ == "_main_":
+    main()
